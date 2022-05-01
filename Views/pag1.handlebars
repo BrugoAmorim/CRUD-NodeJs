@@ -1,0 +1,66 @@
+<div class="container">
+
+    {{#if mostrarTitulo}}
+        <h2>Lista de Usuarios:</h2>
+    {{/if}}
+    
+    <div class="registros">
+        <table class="table">
+            <thead class="border border-3">
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+            </thead>
+            <tbody class="border border-3">
+                {{#each dados}}
+                    <tr>
+                        <td>{{dataValues.id}}</td>
+                        <td>{{dataValues.nome}}</td>
+                        <td>{{dataValues.sobrenome}}</td>
+                        <td>
+                            <form action="/pag3/{{dataValues.id}}" method="get">
+                                <button class="btn btn-info btn-sm">Editar</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="get" action="/pag4/{{{dataValues.id}}}">
+                                <button class="btn btn-danger btn-sm">apagar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="inserir">
+        <a class="btn btn-primary" href="/pag2">Novo Usuário</a>
+    </div>
+</div>
+
+<style>
+    body{
+        background-color: royalblue;
+    }
+
+    .container{
+        height: 100%;
+        padding: 2%;
+        background-color: white;
+    }
+
+    .registros{
+        min-height: auto;
+        max-width: 60%;
+        min-width: 100%;
+
+        display: block;
+        overflow-y: auto;
+    }
+
+    .inserir{
+        height: auto;
+        width: auto;
+
+        padding: 1%;
+    }
+</style>

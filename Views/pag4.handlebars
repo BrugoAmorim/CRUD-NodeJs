@@ -1,0 +1,86 @@
+<div class="container">
+    
+    <div class="titulopag">
+        <h1>Deletar usuário:</h1>
+    </div>
+
+    {{#each dados}}
+        <div class="corpo border border-3">
+            <div class="informaces">
+                <label class="lead">Nome: </label>
+                <input class="form-control" type="text" value="{{dataValues.nome}} {{dataValues.sobrenome}}" readonly>
+            </div>
+            
+            <div class="informaces">
+                <label class="lead">Cpf: </label>
+                <input class="form-control" type="text" value={{dataValues.cpf}} readonly>
+            </div>
+
+            <div class="informaces">
+                <label class="lead">Rg: </label>
+                <input class="form-control" type="text" value={{dataValues.rg}} readonly>
+            </div>
+            
+            <div class="eventos">
+                <form action="/apagar/{{dataValues.id}}?_method=DELETE" method="post">
+                    <button class="btn btn-danger m-1">Excluir</button>
+                </form>
+
+                <a href="/" class="btn btn-outline-dark">Voltar</a>
+            </div>
+        
+        </div>
+    {{/each}}
+
+</div>
+
+<style>
+    body{
+        background-color: royalblue;
+    }
+
+    .container{
+        height: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .corpo{
+        height: 60%;
+        width: 40%;
+        padding: 2%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .reg{
+        height: auto;
+        width: auto;
+        margin: 1%;
+        padding: 1%;
+    }
+
+    .titulopag{
+        height: auto;
+        width: 40%;
+
+        margin: 1%;
+        text-align: center;
+    }
+
+    .eventos{
+        height: auto;
+        width: 100%;
+        padding: 1%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+</style>

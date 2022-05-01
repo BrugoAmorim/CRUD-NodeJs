@@ -1,0 +1,85 @@
+<div class="container">
+    
+    <div class="titulopag">
+        <h1>Insira um novo usuário:</h1>
+    </div>
+
+    <form class="form border border-3" action="/salvar" method="post">
+
+        <div class="corpoinputs">
+            <label class="lead" for="inpnome">Nome:</label>
+            <input class="form-control" type="text" name="inpnome" required>
+        </div>
+
+        <div class="corpoinputs">
+            <label class="lead" for="inpsobrenome">Sobrenome:</label>
+            <input class="form-control" type="text" name="inpsobrenome" required>
+        </div>
+
+        <div class="corpoinputs">
+            <label class="lead" for="inpcpf">Cpf:</label>
+            <input class="form-control" type="text" name="inpcpf" required>
+        </div>
+
+        <div class="corpoinputs">
+            <label class="lead" for="inprg">Rg:</label>
+            <input class="form-control" type="text" name="inprg" required>
+        </div>
+
+        <div class="corpoinputs">
+            <label class="lead" for="dtnasc">Data Nascimento:</label>
+            <input class="form-control" type="date" name="dtnasc" required>
+        </div>
+        
+        <div class="eventos">
+            <button class="btn btn-primary">Salvar</button>
+            <a href="/" class="btn btn-outline-dark">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    body{
+        background-color: royalblue;
+        height: 100vh;
+    }
+
+    .container{
+        height: 100%;
+        
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form{
+        height: 80%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .corpoinputs{
+        height: 20%;
+        width: 95%;
+        padding: 1%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .eventos{
+        height: 20%;
+        width: 95%;
+        margin: 1%;
+        padding: 1%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+</style>
